@@ -23,11 +23,13 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'firstname'=>fake()->firstName(),
             'lastname'=>fake()->lastName(),
+            'avatar'=>'/assets/avatars/avatar-'.rand(1,7).'.jpg',
             'company'=>fake()->company(),
             'position'=>fake()->word(),
             'email_verified_at' => now(),
